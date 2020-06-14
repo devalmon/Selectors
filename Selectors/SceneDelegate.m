@@ -7,6 +7,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "MyObject.h"
 
 @interface SceneDelegate ()
 
@@ -19,8 +20,62 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+//    SEL selector1 = @selector(testMethod);
+//    SEL selector2 = @selector(testMethod:);
+//    SEL selector3 = @selector(testMethod:withParameter:);
+//    [self performSelector:selector1];
+//    [self performSelector:selector2 withObject:@"str1"];
+//    [self performSelector:selector3 withObject:@"f1" withObject:@"f2"];
+//    [self performSelector:selector2 withObject:@"asd" afterDelay:5.f];
+    
+//    MyObject *obj = MyObject.new;
+    
+//    [obj performSelector:@selector(testExternalMethod)];
+//    NSLog(@"%@", [obj performSelector:@selector(superSecretMethod)]);
+    
+//    NSLog(@"%@", [self testMethodWithParam1:12 param2:12.0 param3:13.5]);
+    
+    NSMethodSignature *signature = [SceneDelegate instanceMethodSignatureForSelector:@selector(testMethodWithParam1:param2:param3:)];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    
+    [invocation setTarget:self];
+    [invocation setSelector:@selector(testMethodWithParam1:param2:param3:)];
+    
+    NSInteger iValue = 1;
+    CGFloat fValue = 23.0f;
+    double dValue = 211.23f;
+    
+    [invocation setArgument:&iValue atIndex:2];
+    [invocation setArgument:&fValue atIndex:3];
+    [invocation setArgument:&dValue atIndex:4];
+    
+    [invocation invoke];
+    
+    __unsafe_unretained NSString *str = nil;
+    [invocation getReturnValue:&str];
+    NSLog(@"%@", str);
 }
 
+- (NSString *) testMethodWithParam1: (NSInteger) intValue param2: (CGFloat) floatValue param3: (double) doubleValue {
+    return [NSString stringWithFormat:@"string: with param1 = %ld, param2= %.2f, param3 = %.1f", intValue, floatValue, doubleValue];
+}
+
+- (void) testMethod {
+    NSLog(@"TestMethod");
+}
+
+- (void) testMethod: (NSString *) string {
+    NSLog(@"testMethod: %@", string);
+}
+
+- (void) testMethod: (NSString *) string withParameter: (NSString *) string2 {
+    NSLog(@"%@, %@", string, string2);
+}
+
+- (void) testMethodWithInt: (NSInteger) numb {
+    NSLog(@"%ld", numb);
+}
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.

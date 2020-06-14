@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8A02087624779CD500CE786C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A02087524779CD500CE786C /* AppDelegate.m */; };
-		8A02087924779CD500CE786C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A02087824779CD500CE786C /* SceneDelegate.m */; };
 		8A02087C24779CD500CE786C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A02087B24779CD500CE786C /* ViewController.m */; };
 		8A02087F24779CD500CE786C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A02087D24779CD500CE786C /* Main.storyboard */; };
 		8A02088124779CD900CE786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A02088024779CD900CE786C /* Assets.xcassets */; };
 		8A02088424779CD900CE786C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A02088224779CD900CE786C /* LaunchScreen.storyboard */; };
 		8A02088724779CD900CE786C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A02088624779CD900CE786C /* main.m */; };
+		8A0208902477AF0300CE786C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A02087824779CD500CE786C /* SceneDelegate.m */; };
+		8A0208912477AF0300CE786C /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A02088E2477A42400CE786C /* MyObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		8A02088324779CD900CE786C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A02088524779CD900CE786C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A02088624779CD900CE786C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A02088D2477A42400CE786C /* MyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
+		8A02088E2477A42400CE786C /* MyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				8A02088224779CD900CE786C /* LaunchScreen.storyboard */,
 				8A02088524779CD900CE786C /* Info.plist */,
 				8A02088624779CD900CE786C /* main.m */,
+				8A02088D2477A42400CE786C /* MyObject.h */,
+				8A02088E2477A42400CE786C /* MyObject.m */,
 			);
 			path = Selectors;
 			sourceTree = "<group>";
@@ -146,10 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0208902477AF0300CE786C /* SceneDelegate.m in Sources */,
+				8A0208912477AF0300CE786C /* MyObject.m in Sources */,
 				8A02087C24779CD500CE786C /* ViewController.m in Sources */,
 				8A02087624779CD500CE786C /* AppDelegate.m in Sources */,
 				8A02088724779CD900CE786C /* main.m in Sources */,
-				8A02087924779CD500CE786C /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
